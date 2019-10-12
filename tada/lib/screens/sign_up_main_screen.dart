@@ -37,7 +37,7 @@ class _SignUpMainScreen extends State<SignUpMainScreen> {
               height: heightSize * 0.22,
               width: widthSize * 0.75,
               padding: EdgeInsets.only(bottom: heightSize * 0.015),
-              child: Image.asset("images/chocho.png"),
+              child: Image.asset("images/Tada.png"),
             ),
             Padding(
               padding: EdgeInsets.only(bottom: heightSize * 0.05),

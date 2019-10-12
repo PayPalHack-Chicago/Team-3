@@ -45,12 +45,12 @@ class _NewTaskState extends State<NewTask> {
                           Radius.circular(5.0),
                         ),
                         borderSide: BorderSide(
-                          color: Colors.blue,
+                          color: Colors.deepPurple,
                         ),
                       ),
                       enabledBorder: const OutlineInputBorder(
                         borderSide:
-                        const BorderSide(color: Colors.blue, width: 0.3),
+                        const BorderSide(color: Colors.deepPurple, width: 0.3),
                         borderRadius: BorderRadius.all(
                           Radius.circular(5.0),
                         ),
@@ -82,12 +82,12 @@ class _NewTaskState extends State<NewTask> {
                           Radius.circular(5.0),
                         ),
                         borderSide: BorderSide(
-                          color: Colors.blue,
+                          color: Colors.deepPurple,
                         ),
                       ),
                       enabledBorder: const OutlineInputBorder(
                         borderSide:
-                        const BorderSide(color: Colors.blue, width: 0.3),
+                        const BorderSide(color: Colors.deepPurple, width: 0.3),
                         borderRadius: BorderRadius.all(
                           Radius.circular(5.0),
                         ),
@@ -122,12 +122,12 @@ class _NewTaskState extends State<NewTask> {
                           Radius.circular(5.0),
                         ),
                         borderSide: BorderSide(
-                          color: Colors.blue,
+                          color: Colors.deepPurple,
                         ),
                       ),
                       enabledBorder: const OutlineInputBorder(
                         borderSide:
-                        const BorderSide(color: Colors.blue, width: 0.3),
+                        const BorderSide(color: Colors.deepPurple, width: 0.3),
                         borderRadius: BorderRadius.all(
                           Radius.circular(5.0),
                         ),
@@ -158,12 +158,12 @@ class _NewTaskState extends State<NewTask> {
                           Radius.circular(5.0),
                         ),
                         borderSide: BorderSide(
-                          color: Colors.blue,
+                          color: Colors.deepPurple,
                         ),
                       ),
                       enabledBorder: const OutlineInputBorder(
                         borderSide:
-                        const BorderSide(color: Colors.blue, width: 0.3),
+                        const BorderSide(color: Colors.deepPurple, width: 0.3),
                         borderRadius: BorderRadius.all(
                           Radius.circular(5.0),
                         ),
@@ -195,12 +195,12 @@ class _NewTaskState extends State<NewTask> {
                           Radius.circular(5.0),
                         ),
                         borderSide: BorderSide(
-                          color: Colors.blue,
+                          color: Colors.deepPurple,
                         ),
                       ),
                       enabledBorder: const OutlineInputBorder(
                         borderSide:
-                        const BorderSide(color: Colors.blue, width: 0.3),
+                        const BorderSide(color: Colors.deepPurple, width: 0.3),
                         borderRadius: BorderRadius.all(
                           Radius.circular(5.0),
                         ),
@@ -230,12 +230,12 @@ class _NewTaskState extends State<NewTask> {
                               Radius.circular(5.0),
                             ),
                             borderSide: BorderSide(
-                              color: Colors.blue,
+                              color: Colors.deepPurple,
                             ),
                           ),
                           enabledBorder: const OutlineInputBorder(
                             borderSide: const BorderSide(
-                                color: Colors.blue, width: 0.3),
+                                color: Colors.deepPurple, width: 0.3),
                             borderRadius: BorderRadius.all(
                               Radius.circular(5.0),
                             ),
@@ -265,12 +265,12 @@ class _NewTaskState extends State<NewTask> {
                               Radius.circular(5.0),
                             ),
                             borderSide: BorderSide(
-                              color: Colors.blue,
+                              color: Colors.deepPurple,
                             ),
                           ),
                           enabledBorder: const OutlineInputBorder(
                             borderSide: const BorderSide(
-                                color: Colors.blue, width: 0.3),
+                                color: Colors.deepPurple, width: 0.3),
                             borderRadius: BorderRadius.all(
                               Radius.circular(5.0),
                             ),
@@ -307,7 +307,7 @@ class _NewTaskState extends State<NewTask> {
                         "Submit Task",
                         style: TextStyle(
                           fontSize: 15.0,
-                          color: Colors.blue,
+                          color: Colors.deepPurple,
                         ), //fontWeight: FontWeight.w600),
                       ),
                     ),

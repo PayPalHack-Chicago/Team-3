@@ -46,7 +46,7 @@ class _LoginMainScreenState extends State<LoginMainScreen> {
                     ),
                     Container(
                       child: Padding(
-                        padding: EdgeInsets.only(top: heightSize * 0.05),
+                        padding: EdgeInsets.only(top: heightSize * 0.015),
                       ),
                     ),
                     Container(
@@ -118,7 +118,7 @@ class _LoginMainScreenState extends State<LoginMainScreen> {
                       color: Colors.black45,
                     ),
                     GestureDetector(
-                        onTap:()=> Navigator.pop(context),
+                        onTap:() => Navigator.of(context).pushNamed("SignUpMainScreen"),
                         child: Container(
                             margin: EdgeInsets.all(20.0),
                             alignment: Alignment.center,

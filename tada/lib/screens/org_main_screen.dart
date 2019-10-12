@@ -31,7 +31,7 @@ class _OrgMainScreenState extends State<OrgMainScreen> {
             alignment: Alignment.center,
             icon: Icon(Icons.person, size: heightSize * 0.045,),
             onPressed: () {
-              print("Go to profile");
+              Navigator.of(context).pushNamed("ProfilePage");
             },
           ),
           title: BlocBuilder(

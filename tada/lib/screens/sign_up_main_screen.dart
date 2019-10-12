@@ -184,7 +184,14 @@ class _SignUpMainScreen extends State<SignUpMainScreen> {
               padding: EdgeInsets.only(bottom: heightSize * 0.01),
             ),
             GestureDetector(
-                onTap: () => Navigator.pushNamed(context, "submit"),
+                onTap: () {
+                  if (_type.index == 0) {
+                    Navigator.of(context).pushNamed("OrgMainScreen");
+                  }
+                  else {
+                    Navigator.of(context).pushNamed("UserMainScreen");
+                  }
+                },
                 child: Text("Sign Up", textAlign: TextAlign.center, style: TextStyle( color: Colors.deepPurple ),
                 )
             ),

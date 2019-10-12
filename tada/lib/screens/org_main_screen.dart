@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tada/blocs/org_bottom_navigation_bloc/bloc.dart';
 import 'package:tada/blocs/org_header_navigation_bloc/bloc.dart';
+import 'package:tada/blocs/org_tasks_bloc/bloc.dart';
+import 'package:tada/models/task_model.dart';
 
 class OrgMainScreen extends StatefulWidget {
   @override
@@ -11,12 +13,51 @@ class OrgMainScreen extends StatefulWidget {
 class _OrgMainScreenState extends State<OrgMainScreen> {
   OrgBottomNavigationBloc _orgBottomNavigationBloc = OrgBottomNavigationBloc();
   OrgHeaderNavigationBloc _orgHeaderNavigationBloc = OrgHeaderNavigationBloc();
+  OrgTasksBloc _orgTasksBloc = OrgTasksBloc();
+
 
   @override
   void dispose() {
     super.dispose();
     _orgBottomNavigationBloc.dispose();
     _orgHeaderNavigationBloc.dispose();
+    _orgTasksBloc.dispose();
+  }
+
+  void _showDialog(TaskModel task){
+    showDialog(
+      context: context,
+      builder: (BuildContext context){
+        return AlertDialog(
+          title: new Text(task.title, textAlign: TextAlign.center,),
+          content: Column(
+            children: <Widget>[
+              Text("Description"),
+              Text('${task.description}\n'),
+
+              Text("Date Task was posted"),
+              Text('${task.postedDate.month}/${task.postedDate.day}/${task.postedDate.year}'),
+
+              Text("Location"),
+              Text('${task.location}\n'),
+
+              Text("Requirements"),
+              Text('${task.requirements}\n'),
+
+              Text("Contact Info"),
+              Text('${task.contactInfo}\n'),
+
+              task.money == 0 ? Text('${task.points} service points') : Text('\$ ${task.money}.00')
+            ],
+          ),
+          actions: <Widget>[
+            new FlatButton(onPressed: () {Navigator.of(context).pop();}, child: Text("Let's Get To Work")),
+            new FlatButton(onPressed: () {Navigator.of(context).pop();}, child: Text("Cancel"))
+
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -55,7 +96,7 @@ class _OrgMainScreenState extends State<OrgMainScreen> {
             IconButton(
               icon: Icon(Icons.add_circle_outline, color: Colors.white, size: heightSize * 0.040),
               onPressed: () {
-
+                Navigator.of(context).pushNamed("NewTaskScreen");
               },
             )
           ],
@@ -64,32 +105,39 @@ class _OrgMainScreenState extends State<OrgMainScreen> {
           bloc: _orgBottomNavigationBloc,
           builder: (context, OrgBottomNavigationState state) {
             if (state is ShowingOrgTasks) {
-              return ListView.builder(
-                  itemCount: 10,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                      },
-                      child: Card(
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                  padding: EdgeInsets.only(top: heightSize * 0.01),
-                                  child: Text("Title", textAlign: TextAlign.center,)
-                              ),
-                              ListTile(
-                                leading: Icon(Icons.location_on),
-                                title: Text("Address"),
-                              ),
-                              ListTile(
-                                leading: Icon(Icons.attach_money),
-                                title: Text("Pay/Service"),
-                              ),
-                            ],
-                          )
-                      ),
-                    );
-                  }
+              return BlocBuilder(
+                bloc: _orgTasksBloc,
+                builder: (context, OrgTasksState state) {
+                  List<TaskModel> currentTasks = (state as UpdatedTasks).tasks;
+                  return ListView.builder(
+                      itemCount: currentTasks.length,
+                      itemBuilder: (context, index) {
+                        TaskModel currentTask = currentTasks[index];
+                        return GestureDetector(
+                          child: Card(
+                              child: Column(
+                                children: <Widget>[
+                                  Container(
+                                      padding: EdgeInsets.only(top: heightSize * 0.01),
+                                      child: Text(currentTask.title, textAlign: TextAlign.center,)
+                                  ),
+                                  ListTile(
+                                    leading: Icon(Icons.location_on),
+                                    title: Text(currentTask.location),
+                                  ),
+                                  ListTile(
+                                    leading: Icon(Icons.attach_money),
+                                    title: currentTask.points == 0 ? Text('${currentTask.money}.00') : Text('${currentTask.points} Service Points'),
+                                  ),
+
+                                  FlatButton.icon(label: Text('View Task'), onPressed: () { _showDialog(currentTask); }, color: Colors.purple[50], icon: Icon(Icons.android)),
+                                ],
+                              )
+                          ),
+                        );
+                      }
+                  );
+                },
               );
             }
             else if (state is ShowingMyTasks) {

@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
         "SignUpMainScreen": (context) => SignUpMainScreen(),
         "UserMainScreen": (context) => UserMainScreen(),
         "OrgMainScreen": (context) => OrgMainScreen(),
-        "ProfilePage": (context) => ProfilePage()
-
+        "ProfilePage": (context) => ProfilePage(),
+        "NewTaskScreen": (context) => NewTask()
       },
     );
   }

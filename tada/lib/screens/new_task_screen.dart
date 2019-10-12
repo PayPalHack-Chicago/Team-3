@@ -1,27 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
+class NewTask extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(),
-    );
-  }
+  _NewTaskState createState() => _NewTaskState();
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _NewTaskState extends State<NewTask> {
   @override
   Widget build(BuildContext context) {
     DateTimePickerTheme pickerTheme = DateTimePickerTheme.Default;

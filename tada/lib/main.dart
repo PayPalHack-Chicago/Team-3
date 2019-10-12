@@ -14,8 +14,10 @@ class MyApp extends StatelessWidget {
       ),
       home: OrgMainScreen(),
       routes: {
+        "SignUpMainScreen": (context) => SignUpMainScreen(),
         "UserMainScreen": (context) => UserMainScreen(),
         "OrgMainScreen": (context) => OrgMainScreen(),
+
       },
     );
   }

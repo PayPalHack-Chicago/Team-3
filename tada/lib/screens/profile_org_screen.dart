@@ -63,6 +63,13 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
             ),
+            Container(
+              child: Text(r'$163.20 in Tada',
+                style: TextStyle(
+                    fontSize: 20
+                ),
+              ),
+            )
           ],
         ),
       ),

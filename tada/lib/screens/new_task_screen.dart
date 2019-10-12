@@ -17,6 +17,7 @@ class _NewTaskState extends State<NewTask> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
         title: Text('Create Task Page'),
       ),
       body: SingleChildScrollView(

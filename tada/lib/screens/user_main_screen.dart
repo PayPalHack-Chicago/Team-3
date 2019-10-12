@@ -49,7 +49,7 @@ class _UserMainScreenState extends State<UserMainScreen> {
           alignment: Alignment.center,
           icon: Icon(Icons.person, size: heightSize * 0.045,),
           onPressed: () {
-            print("Go to profile");
+            Navigator.of(context).pushNamed("StudentScreen");
           },
         ),
       ),

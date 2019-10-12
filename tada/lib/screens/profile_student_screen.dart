@@ -1,26 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class ProfileStudentScreen extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Student Profile',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: ProfilePage(),
-    );
-  }
+  _ProfileStudentScreenState createState() => _ProfileStudentScreenState();
 }
 
-class ProfilePage extends StatefulWidget {
-  @override
-  _ProfilePageState createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfileStudentScreenState extends State<ProfileStudentScreen> {
   @override
   Widget build(BuildContext context) {
     double heightSize = MediaQuery.of(context).size.height;
@@ -30,6 +16,7 @@ class _ProfilePageState extends State<ProfilePage> {
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          backgroundColor: Colors.deepPurple,
           title: Text('Student Bio Page'),
         ),
         body: Column(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tada/screens/profile_student_screen.dart';
 import 'screens/screens.dart';
 
 void main() => runApp(MyApp());
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
         "UserMainScreen": (context) => UserMainScreen(),
         "OrgMainScreen": (context) => OrgMainScreen(),
         "ProfilePage": (context) => ProfilePage(),
-        "NewTaskScreen": (context) => NewTask()
+        "NewTaskScreen": (context) => NewTask(),
+        "StudentScreen": (context) => ProfileStudentScreen()
       },
     );
   }
